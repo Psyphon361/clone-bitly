@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<!-- HTML ME STYLE ADD KRDE -->
+
+<html class="html-tag-dash" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title><%= title %></title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/c622614d7c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="nav-section">
+        <div id="create-short-url" class="sidenav">
+            <div class="container top-create-bar py-4">
+                <div class="row">
+                    <div class="col-8 pb-3">
+                        <h1 class="create-link">CREATE LINK</h1>
+                    </div>
+                    <div class="col-4 pb-3">
+                        <a href="javascript:void(0)" class="closebtn" onclick="close_create_url()">&times;</a>
+                    </div>
+                </div>
+            </div>
+
+            <form method="POST">
+                <input type="url" class="long-url" name="long_url" />
+                <!-- <hr class="hr-on-btn"> -->
+                <input class="create-panel-btn" value="CREATE" type="submit" />
+            </form>
+        </div>
+
+        <!-- <button class="btn btn-primary edit-btn" onclick="open_edit_url()">
+            Edit
+        </button> -->
+
+        <div id="edit-short-url" class="sidenav">
+            <div class="container top-create-bar py-4">
+                <div class="row">
+                    <div class="col-8 pb-3">
+                        <h1 class="create-link">EDIT LINK</h1>
+                    </div>
+                    <div class="col-4 pb-3">
+                        <a href="javascript:void(0)" class="closebtn" onclick="close_edit_url()">&times;</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="edit-url-form" method="POST">
+                <input placeholder="Add a title." type="url" class="title-url" name="long_url" />
+
+                <input class="edit-url" name="long_url" id="page_name_field" type="url" onclick="edit()" name="app_name"
+                    value="bit.ly/" size="50" />
+
+                <input class="unselectable" id="page_name_field_hidden" type="hidden" value="bit.ly/" size="50" />
+
+                <!-- <input type="url" class="edit-url" name="long_url" /> -->
+                <!-- <hr class="hr-on-btn"> -->
+                <input class="create-panel-btn" value="SAVE" type="submit" />
+            </form>
+        </div>
+
+        <header id="main-body" style="position: fixed">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top dash-nav">
+                <img src="images/bitlyLogo.png" width="50px" alt="bitly-logo" />
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto pl-lg-3">
+                        <div class="">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle pl-lg-3" href="#" id="dropdown01"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="test pt-lg-2 pt-2 pl-lg-2 pl-5 mx-auto">
+                                        <span class="pr-lg-5 pl-lg-4">
+                                            All Links
+                                        </span>
+
+                                        <img class="ml-5 ml-lg-0 pl-5 pt-lg-0 img-fluid" width="70px"
+                                            src="images/dropdown.png" alt="" />
+                                    </div>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <a style="width: 270px" class="dropdown-item test-2" href="#">All Links</a>
+                                    <a class="dropdown-item test-2" href="#">Dashboard</a>
+                                    <a class="dropdown-item test-2" href="#">Custom Links</a>
+                                    <a class="dropdown-item test-2" href="#">Campaigns</a>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0 nav-form">
+                        <input class="form-control mr-sm-2 search-bar" type="text" placeholder="Search"
+                            aria-label="Search" />
+
+                        <button class="btn my-2 my-sm-0 create-btn" onclick="open_create_url()">
+                            <text class="text">CREATE</text>
+                            <img class="ml-5 ml-lg-0 pl-5 pt-lg-0 img-fluid" width="70px" src="images/dropdown.png"
+                                alt="" />
+                        </button>
+                    </div>
+
+                    <ul class="navbar-nav">
+                        <div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <div class="test pt-lg-1 pb-lg-5 pl-4 mx-auto pb-5">
+                                        <span class="">
+                                            <h5>Customer Name</h5>
+                                            <h5>Free Account</h5>
+                                        </span>
+
+                                        <img class="pl-5 ml-5 ml-5 img-fluid img-check" width="70px"
+                                            src="images/dropdown.png" alt="" />
+                                    </div>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <a style="width: 270px" class="dropdown-item test-2" href="#">All Links</a>
+                                    <a class="dropdown-item test-2" href="#">Dashboard</a>
+                                    <a class="dropdown-item test-2" href="#">Custom Links</a>
+                                    <a class="dropdown-item test-2" href="#">Campaigns</a>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </section>
+
+
+    <section id="details">
+        <div style="background-color: #2b3e4b" class="container chart-text pt-5">
+            <div class="row">
+                <div class="col-lg-3 col-12 l">
+                    <i class="far fa-chart-bar fa-2x"></i>
+                    <p class="pl-3" style="display: inline-block">
+                        Visits: {{ total_visits }}
+                    </p>
+                    <br />
+                    <i class="far fa-window-maximize fa-2x"></i>
+                    <p class="pl-3" style="display: inline-block">
+                        Max visits: {{ max_visits }}
+                    </p>
+                    <br />
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p class="pl-3" style="display: inline-block">
+                        Location: {{ max_country_name }}
+                    </p>
+                    <br />
+                </div>
+
+                <div class="col-lg-9 col-12 pt-lg-0 pt-5 py-lg-0 py-5">
+                    <img class="img-fluid" width="1000px" src="images/chartTest.png" alt="chart" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="link-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <div class="check" style="overflow-y: scroll; height:430px; background-color: #F5F6F7;">
+
+                        <div class="short-link-info pt-3 pl-3"
+                            onclick="location.href='{{ url_for("dashboard_with_links", unique_id=user.unique_id, selected_link=user.short_url) }}';"
+                            style="cursor: pointer">
+                            <p
+                                style="color: #828387; letter-spacing: .3px; text-transform: uppercase; font-size: 13px;">
+                                date,time </p>
+                            <p style="color: #36383b; font-size: 15px; font-weight: 500;">
+                                {{ user.title }}
+                            </p>
+                            <p
+                                style="color: #ee6123; font-size: 13px; font-weight: bold; display: inline-block; margin-right: 10px;">
+                                clonebitly.herokuapp.com/{{ user.short_url }}
+                            </p>
+                            <p style="display: inline-block;">1 <i class="far fa-chart-bar"></i></p>
+                        </div>
+                        <hr>
+
+                        <div class="short-link-info pt-3 pl-3"
+                            onclick="location.href='{{ url_for("dashboard_with_links", unique_id=user.unique_id, selected_link=user.short_url) }}';"
+                            style="cursor: pointer">
+                            <p
+                                style="color: #828387; letter-spacing: .3px; text-transform: uppercase; font-size: 13px;">
+                                date,time </p>
+                            <p style="color: #36383b; font-size: 15px; font-weight: 500;">
+                                {{ user.title }}
+                            </p>
+                            <p style="color: #ee6123; font-size: 13px; font-weight: bold">
+                                clonebitly.herokuapp.com/{{ user.short_url }}
+                            </p>
+                            <p>1 <i class="far fa-chart-bar"></i></p>
+                        </div>
+                        <hr>
+
+                        <div class="short-link-info pt-3 pl-3"
+                            onclick="location.href='{{ url_for("dashboard_with_links", unique_id=user.unique_id, selected_link=user.short_url) }}';"
+                            style="cursor: pointer">
+                            <p
+                                style="color: #828387; letter-spacing: .3px; text-transform: uppercase; font-size: 13px;">
+                                date,time </p>
+                            <p style="color: #36383b; font-size: 15px; font-weight: 500;">
+                                {{ user.title }}
+                            </p>
+                            <p style="color: #ee6123; font-size: 13px; font-weight: bold">
+                                clonebitly.herokuapp.com/{{ user.short_url }}
+                            </p>
+                            <p>1 <i class="far fa-chart-bar"></i></p>
+                        </div>
+                        <hr>
+
+                        <div class="short-link-info pt-3 pl-3"
+                            onclick="location.href='{{ url_for("dashboard_with_links", unique_id=user.unique_id, selected_link=user.short_url) }}';"
+                            style="cursor: pointer">
+                            <p
+                                style="color: #828387; letter-spacing: .3px; text-transform: uppercase; font-size: 13px;">
+                                date,time
+                            </p>
+                            <p style="color: #36383b; font-size: 15px; font-weight: 500;">
+                                {{ user.title }}
+                            </p>
+                            <p style="color: #ee6123; font-size: 13px; font-weight: bold">
+                                clonebitly.herokuapp.com/{{ user.short_url }}
+                            </p>
+                            <p>1 <i class="far fa-chart-bar"></i></p>
+                        </div>
+                        <hr>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-12 link-options pt-lg-4 pl-lg-4 pt-3">
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p style="font-size: 16px; font-weight: 500; color: #828387; line-height: 15px;">CREATED
+                                    NOV 11, 1:49 PM | { username in capitals } </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p style="font-size: 22px; font-weight: 500; color: #36383b; line-height: 32px;">forms -
+                                    Change color of text while typing in HTML textbox? - Stack Overflow</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p style="font-size: 15px; font-weight: 400; color: #828387; line-height: 22px;">
+                                    https://stackoverflow.com/questions/31283899/change-color-of-text-while-typing-in-html-textbox
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                
+                                <p
+                                    style="display: inline-block; margin-right: 10px; color: #ee6123; font-size: 15px; font-weight: 500; line-height: 23px;">
+                                    clonebitly.herokuapp.com/{{ user.short_url }}</p>
+                                <button style="display: inline-block; margin-right: 10px;" class="btn right-btn">
+                                    <text> COPY</text>
+                                </button>
+
+                                <button style="display: inline-block; margin-right: 10px;" class="btn right-btn pl-lg-3"
+                                    onclick="edit_create_url()">
+                                    <text> EDIT</text>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function open_create_url() {
+            document.getElementById("create-short-url").style.width =
+                "300px";
+            document.getElementById("main-body").style.opacity = 0.7;
+            document.getElementById("create-short-url").style.opacity = 1;
+        }
+
+        function close_create_url() {
+            document.getElementById("create-short-url").style.width = "0";
+            document.getElementById("main-body").style.opacity = 1;
+            document.getElementById("create-short-url").style.opacity = 1;
+        }
+        function close_edit_url() {
+            document.getElementById("edit-short-url").style.width = "0";
+            document.getElementById("main-body").style.opacity = 1;
+            document.getElementById("edit-short-url").style.opacity = 1;
+        }
+
+        function open_edit_url() {
+            document.getElementById("create-short-url").style.width = "0";
+            document.getElementById("edit-short-url").style.width = "300px";
+            document.getElementById("main-body").style.opacity = 0.7;
+            document.getElementById("create-short-url").style.opacity = 1;
+        }
+
+        function edit() {
+            var readOnlyLength = $("#page_name_field_hidden").val().length;
+            $("#page_name_field").on("keypress, keydown", function (event) {
+                if (
+                    event.which != 37 &&
+                    event.which != 39 &&
+                    (this.selectionStart < readOnlyLength ||
+                        (this.selectionStart == readOnlyLength &&
+                            event.which == 8))
+                ) {
+                    return false;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

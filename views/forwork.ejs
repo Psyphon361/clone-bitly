@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>
+        <%= title %>
+    </title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/c622614d7c.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function dynInput(cbox) {
+            if (cbox.checked) {
+                var input = document.createElement("input");
+                input.type = "text";
+                var div = document.createElement("div");
+                div.id = cbox.name;
+                div.appendChild(input);
+                document.getElementById("insertinputs").appendChild(div);
+            } else {
+                document.getElementById(cbox.name).remove();
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <section>
+        <div class="container pt-md-3 p-1 m-1">
+            <div class="row">
+                <div class="col">
+                    <a class="px-md-4 mx-md-3 p-1 m-1" href="/">
+                        <img class="signup-header-img mx-md-5" src="images/logo.png" alt="bitly-logo" />
+                    </a>
+                    <hr style="width: 88%; margin: 4px auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container pt-md-5 pt-1">
+        <div class="row justify-content-md-center pt-4">
+            <div class="col-12 col-lg-4 col-sm-auto px-5">
+                <h2 class="h2">Listen to your audience
+                </h2>
+                <p class="para px-md-0 px-2">Maybe you're a solopreneur, maybe you're one of many Bitly users at your company. Just as you want to understand your audience, we want to understand our customers.</p>
+                <p class="para px-md-0 px-2">To get you started on the right foot, plese tell us more about your organization.
+                </p>
+            </div>
+
+            <div class="col-sm-auto col-lg-4 col-12 pt-md-2 pt-5 px-5 px-md-3">
+                <div class="pr-md-5 mr-md-4">
+                    <form>
+                        <div class="form-group">
+                            <label class="requirement" for="fname">First name</label>
+                            <input type="email" class="form-control input-field" id="fname" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="requirement" for="lname">Last name</label>
+                            <input type="email" class="form-control input-field" id="lname" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="requirement" for="org">Organization *</label>
+                            <input type="text" class="form-control input-field" id="org" aria-describedby="emailHelp" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="requirement" for="inputState">Title *</label>
+                            <select id="inputState" class="form-control input-field custom-select mr-sm-2" required>
+                                <option class="default-text" value="" disabled selected hidden>Select title</option>
+                                <option>Owner</option>
+                                <option>Individual Contributor</option>
+                                <option>Manager</option>
+                                <option>Director</option>
+                                <option>VP</option>
+                                <option>Executive</option>
+                                <option>Not Applicable</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="requirement" for="inputState">Your department *</label>
+                            <select id="inputState" class="form-control input-field custom-select mr-sm-2" required>
+                                <option class="default-text" value="" disabled selected hidden>Select department
+                                </option>
+                                <option>Digital Marketing</option>
+                                <option>Product / Tech</option>
+                                <option>Social Media</option>
+                                <option>PR / Comms</option>
+                                <option>Customer Service</option>
+                                <option>Human Resources</option>
+                                <option>Education</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="requirement" for="inputState">Number of people in organization *</label>
+                            <select id="inputState" class="form-control input-field custom-select mr-sm-2" required>
+                                <option class="default-text" disabled selected hidden>
+                                    <p class="default-text">Select size of organization</p>
+                                </option>
+                                <option>Less than 50</option>
+                                <option>50-200</option>
+                                <option>200-500</option>
+                                <option>50-1000</option>
+                                <option>More than 1000</option>
+                                <option>Not Applicable</option>
+                            </select>
+                        </div>
+
+                        <label class="requirement" for="inputState">What are you looking to do? *</label>
+
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="social">
+                            <label class="form-check-label work-label" for="social">
+                                Social media marketing</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="digital">
+                            <label class="form-check-label work-label" for="digital">
+
+                                Digital campaigns</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="sms">
+                            <label class="form-check-label work-label" for="sms">
+
+                                SMS notifications</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="brand">
+                            <label class="form-check-label work-label" for="brand">
+
+                                Branding</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="campaigns">
+                            <label class="form-check-label work-label" for="campaigns">
+
+                                Offline campaigns</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="influence">
+                            <label class="form-check-label work-label" for="influence">
+
+                                Influencer marketing</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="checkbox" class="form-check-input" id="comms">
+                            <label class="form-check-label work-label" for="comms">
+
+                                Internal communications</label>
+                        </div>
+                        <div class="py-1 pb-3">
+                            <input id="other" type="checkbox" name="check1" onclick="dynInput(this);" />
+                            <label class="form-check-label work-label" for="other">
+
+                                Other</label>
+                            <p id="insertinputs"></p>
+                        </div>
+                        <button type="submit" class="btn btn-save"><a href="#" style="color: #fff; text-decoration: none;">Save</a></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
